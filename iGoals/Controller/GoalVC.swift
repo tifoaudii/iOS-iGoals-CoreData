@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import CoreData
 
 class GoalVC: UIViewController {
     
     //MARK: OUTLETS & PROPERTIES
-    private var emptyGoals: UILabel?
-
+    @IBOutlet weak var goalTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        
+    }
+    @IBAction func addGoalButtonPressed(_ sender: Any) {
     }
     
 }
