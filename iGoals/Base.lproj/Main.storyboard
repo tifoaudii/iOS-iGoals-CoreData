@@ -200,7 +200,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="goalDescription" destination="yij-BG-c5S" id="JJv-kf-NN5"/>
+                                            <outlet property="goalDescription" destination="Hyj-oM-6NA" id="SLz-mD-lRn"/>
                                             <outlet property="goalProgress" destination="pkg-WK-9mh" id="74U-m6-alk"/>
                                             <outlet property="goalType" destination="yij-BG-c5S" id="HEx-sH-fvp"/>
                                         </connections>
