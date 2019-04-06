@@ -39,7 +39,7 @@ class CreateGoalVC: UIViewController {
             nextButton.isEnabled = true
             guard let CompleteGoalVC = storyboard?.instantiateViewController(withIdentifier: COMPLETE_GOAL_VC) as? CompleteGoalVC else { return }
             CompleteGoalVC.loadData(description: goalTextView.text, type: choosenGoalType)
-            presentDetail(CompleteGoalVC)
+            presentingViewController?.presentSecondaryDetail(CompleteGoalVC)
         }
     }
     
