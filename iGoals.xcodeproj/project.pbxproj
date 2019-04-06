@@ -11,6 +11,7 @@
 		292FE5532258510800CC5B56 /* PresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FE5522258510800CC5B56 /* PresentTransition.swift */; };
 		292FE555225855D200CC5B56 /* KeyboardBindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FE554225855D200CC5B56 /* KeyboardBindView.swift */; };
 		292FE5572258568300CC5B56 /* UIButtonSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FE5562258568300CC5B56 /* UIButtonSelected.swift */; };
+		292FE55922585DD200CC5B56 /* CompleteGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FE55822585DD200CC5B56 /* CompleteGoalVC.swift */; };
 		297449922257275900975EAA /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297449912257275900975EAA /* GoalCell.swift */; };
 		29F924CF2254A4D000AF5F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F924CE2254A4D000AF5F41 /* AppDelegate.swift */; };
 		29F924D12254A4D000AF5F41 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F924D02254A4D000AF5F41 /* SplashVC.swift */; };
@@ -38,6 +39,7 @@
 		292FE5522258510800CC5B56 /* PresentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTransition.swift; sourceTree = "<group>"; };
 		292FE554225855D200CC5B56 /* KeyboardBindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBindView.swift; sourceTree = "<group>"; };
 		292FE5562258568300CC5B56 /* UIButtonSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonSelected.swift; sourceTree = "<group>"; };
+		292FE55822585DD200CC5B56 /* CompleteGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteGoalVC.swift; sourceTree = "<group>"; };
 		297449912257275900975EAA /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		29F924CB2254A4D000AF5F41 /* iGoals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGoals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F924CE2254A4D000AF5F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				29F924D02254A4D000AF5F41 /* SplashVC.swift */,
 				29F924F72254BFA600AF5F41 /* GoalVC.swift */,
 				292FE54F22584F3C00CC5B56 /* CreateGoalVC.swift */,
+				292FE55822585DD200CC5B56 /* CompleteGoalVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				29F924CF2254A4D000AF5F41 /* AppDelegate.swift in Sources */,
 				292FE5532258510800CC5B56 /* PresentTransition.swift in Sources */,
 				29F924F62254BE3F00AF5F41 /* Constant.swift in Sources */,
+				292FE55922585DD200CC5B56 /* CompleteGoalVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,14 +6,17 @@
 //  Copyright © 2019 BCC FILKOM. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
 
 //MARK: SEGUE IDENTIFIER
 let MAIN_SEGUE = "main_segue"
 let CREATE_GOAL_SEGUE = "create_goal_segue"
+let COMPLETE_GOAL_SEGUE = "complet_goal_segue"
 
 //MARK: VC IDENTIFIER
 let CREATE_GOAL_VC = "create_goal_vc"
+let COMPLETE_GOAL_VC = "complete_goal_vc"
 
 //MARK: CELL IDENTIFIER
 let GOAL_CELL = "goal_cell"
@@ -23,3 +26,6 @@ enum GoalType: String {
     case longTerm = "Long Term"
     case shortTerm = "Short Term"
 }
+
+//MARK: SHARED APP DELEGATE
+let appDelegate = UIApplication.shared.delegate as? AppDelegate

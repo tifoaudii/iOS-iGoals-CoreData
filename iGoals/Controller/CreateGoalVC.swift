@@ -35,7 +35,12 @@ class CreateGoalVC: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        goalTextView.endEditing(true)
+        if goalTextView.text != "" && goalTextView.text != "What is your goal?" {
+            nextButton.isEnabled = true
+            guard let CompleteGoalVC = storyboard?.instantiateViewController(withIdentifier: COMPLETE_GOAL_VC) as? CompleteGoalVC else { return }
+            CompleteGoalVC.loadData(description: goalTextView.text, type: choosenGoalType)
+            presentDetail(CompleteGoalVC)
+        }
     }
     
     @IBAction func longTermButtonPressed(_ sender: Any) {
