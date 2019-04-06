@@ -19,7 +19,6 @@ class SplashVC: UIViewController {
     @objc func onSplashNavigate() {
         performSegue(withIdentifier: MAIN_SEGUE, sender: nil)
     }
-
-
+    
 }
 
