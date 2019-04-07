@@ -64,7 +64,7 @@ extension GoalVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: GOAL_CELL, for: indexPath) as? GoalCell {
             let goal = goals[indexPath.row]
-            cell.setupCell(desc: goal.goalDescription!, type: GoalType(rawValue: goal.goalType!)!, progress: Int(goal.goalProgress))
+            cell.setupCell(withGoal: goal)
             return cell
         } else {
             return GoalCell()
@@ -81,25 +81,56 @@ extension GoalVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
-            self.removeData(forIndexPath: indexPath)
-            self.refreshCoreDataObject()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.removeData(forIndexPath: indexPath, completion: { (success) in
+                if success {
+                    self.refreshCoreDataObject()
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                }
+            })
         }
-        deleteAction.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-        return [deleteAction]
+        
+        
+        let updateProgressAction = UITableViewRowAction(style: .normal, title: "ADD") { (rowAction, indexPath) in
+            
+            self.updateProgressGoal(forIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        deleteAction.backgroundColor = #colorLiteral(red: 0.9542676806, green: 0, blue: 0.1016102508, alpha: 1)
+        updateProgressAction.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        return [deleteAction, updateProgressAction]
     }
 }
 
 extension GoalVC {
     
-    func removeData(forIndexPath indexPath: IndexPath) {
+    func removeData(forIndexPath indexPath: IndexPath, completion: (_ status: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         managedContext.delete(goals[indexPath.row])
         
         do {
             try managedContext.save()
+            completion(true)
         } catch let error as NSError {
             debugPrint(error)
+            completion(false)
+        }
+    }
+    
+    func updateProgressGoal(forIndexPath indexPath: IndexPath) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        let choosenGoal = goals[indexPath.row]
+        
+        if choosenGoal.goalProgress < choosenGoal.goalCompletionValue {
+            choosenGoal.goalProgress += 1
+            
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                debugPrint(error)
+            }
+        } else {
+            return
         }
     }
     

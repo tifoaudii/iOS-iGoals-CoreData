@@ -46,6 +46,7 @@ class CompleteGoalVC: UIViewController {
         newGoal.goalCompletionValue = Int32(goalProgress.text!)!
         newGoal.goalProgress = Int32(0)
         
+        print(newGoal)
         do {
             try managedContext.save()
             completion(true)
