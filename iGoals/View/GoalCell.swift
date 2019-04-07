@@ -22,7 +22,6 @@ class GoalCell: UITableViewCell {
         
         self.contentView.layer.borderWidth = 0.5
         self.contentView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        goalComplete.isHidden = true
     }
 
     func setupCell(withGoal goal: Goal) {
@@ -32,7 +31,9 @@ class GoalCell: UITableViewCell {
         
         if goal.goalProgress == goal.goalCompletionValue {
             goalComplete.isHidden = false
-        } 
+        } else {
+            goalComplete.isHidden = true
+        }
     }
     
 }
